@@ -3,6 +3,26 @@
 ## Project Overview
 The SUN Lab Access System is a desktop application that tracks access to the Student Unix Network (SUN) Lab. Every time a student swipes their card, their student ID and the timestamp are recorded in the database. The system provides an admin interface for managing users, viewing access logs, and searching logs by filters.
 
+## High-Level Requirements
+- The system **MUST** record every access to the SUN Lab, storing the student ID and timestamp.
+- The system **MUST** allow administrators to search for access logs by student ID and/or date range.
+- Administrators **SHALL** be able to activate, suspend, or reactivate user IDs.
+
+## Database Documentation
+- **Users Table**:
+  - `id`: Primary key (auto-increment).
+  - `student_id`: Integer, unique identifier for the student.
+  - `user_type`: String, type of user (student, faculty, staff).
+  - `status`: Current status of the user (active, suspended, reactivated).
+
+- **Access Logs Table**:
+  - `id`: Primary key (auto-increment).
+  - `student_id`: Foreign key (references `users.student_id`).
+  - `timestamp`: Time when the user accessed the lab.
+
+## Video Demo
+Watch the [video demo here](https://drive.google.com/file/d/1kSvmlgab_1EYOZODGHkHTAmitF8GqUf4/view?usp=sharing).
+
 ## How to Run
 To run this project, follow the steps below:
 
@@ -20,9 +40,6 @@ To run this project, follow the steps below:
    ```bash
    Copy code
    python3 admin_gui.py
-
-## Video Demo
-Watch the [video demo here](https://drive.google.com/file/d/1kSvmlgab_1EYOZODGHkHTAmitF8GqUf4/view?usp=sharing).
 
 # Features
 
