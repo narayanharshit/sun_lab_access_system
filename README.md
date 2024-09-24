@@ -21,6 +21,9 @@ To run this project, follow the steps below:
    Copy code
    python3 admin_gui.py
 
+## Video Demo
+Watch the [video demo here](https://drive.google.com/file/d/1kSvmlgab_1EYOZODGHkHTAmitF8GqUf4/view?usp=sharing).
+
 # Features
 
 ## View Access Logs
